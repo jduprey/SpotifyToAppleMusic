@@ -25,34 +25,38 @@
 
 <body onload="init()">
 
-  <!-- Add your site or application content here -->
-  <h1>Spotify Playlist 2 Apple Music</h1>
-  <p>Welcome to the Spotify playlist to Apple Music application.</p>
+  <div class="app">
 
-  <h2 id="status"><i class="fa fa-spinner fa-spin" style="font-size:24px"></i> Loading... please wait.  </h2>
-  
-  <div id="app_section" style="display:none">
+    <!-- Add your site or application content here -->
+    <h1>Spotify Playlist 2 Apple Music</h1>
+    <p>Welcome to the Spotify playlist to Apple Music application.</p>
+
+    <h2 id="status"><i class="fa fa-spinner fa-spin" style="font-size:24px"></i> Loading... please wait.  </h2>
     
-    <form onsubmit="return load_spotify_playlist(event, 'spotify_playlist_url')">
-      <label for="spotify_playlist_url">Spotify Playlist:</label> <input type="text" id="spotify_playlist_url" size="64" placeholder="https//.." />
-      <button type="submit">Go</button>
-    </form>
-
-    <hr/>
-
-    <div id="spotify_playlist_details" style="display: none;">
-      <h3 id="spotify_playlist_title"></h3>
-      <h4> by <span id="spotify_playlist_owner"></span> | <span id="spotify_playlist_followers"></span> followers</h4>
+    <div id="app_section" style="display:none">
       
-      <image id="spotify_playlist_cover" width=400 src=""></image>
+      <form onsubmit="return load_spotify_playlist(event, 'spotify_playlist_url')">
+        <label for="spotify_playlist_url">Spotify Playlist:</label> <input type="text" id="spotify_playlist_url" size="64" placeholder="https//.." />
+        <button type="submit">Go</button>
+      </form>
 
-      <h4>Tracks</h4>
-      <table id="spotify_playlist_tracks">
+      <hr/>
+
+      <div id="spotify_playlist_details" style="display: none;">
+        <h3>Spotify Playlist: <span id="spotify_playlist_title"></span></h3>
+        <h4> by <span id="spotify_playlist_owner"></span> | <span id="spotify_playlist_followers"></span> followers</h4>
         
-      </table>
+        <image id="spotify_playlist_cover" width=400 src=""></image>
 
+        <h4>Tracks</h4>
+        <table id="spotify_playlist_tracks">
+          
+        </table>
+
+      </div>
+      
     </div>
-    
+
   </div>
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
