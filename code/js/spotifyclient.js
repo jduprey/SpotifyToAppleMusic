@@ -1,5 +1,3 @@
-var spotify_token = "";
-
 /**
  * Authenticates with spotify
  * @param {*} client_id 
@@ -23,8 +21,7 @@ function get_access_token(client_id, client_secret){
             body: bodyContent,
             headers: headersList
         })
-        .then(response => response.json())
-        .then(result => spotify_token = result.access_token);
+        .then(response => response.json());
 }
 
 
@@ -41,12 +38,11 @@ function get_playlist(playlist_id, token){
         "Authorization": "Bearer " + token
        }
        
-       return fetch("https://api.spotify.com/v1/playlists/" + playlist_id + "/tracks", { 
+      //  return fetch("https://api.spotify.com/v1/playlists/" + playlist_id + "/tracks", { 
+      return fetch("https://api.spotify.com/v1/playlists/" + playlist_id, { 
          method: "GET",
          headers: headersList
        }).then(function(response) {
          return response.json();
-       }).then(function(data) {
-         console.log(data);
        });
 }

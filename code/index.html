@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Emma's Title</title>
+  <title>Spotify Playlist 2 Apple Music</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,6 +14,7 @@
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
@@ -22,20 +23,50 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<body onload="init()">
 
   <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+  <h1>Spotify Playlist 2 Apple Music</h1>
+  <p>Welcome to the Spotify playlist to Apple Music application.</p>
+
+  <h2 id="status"><i class="fa fa-spinner fa-spin" style="font-size:24px"></i> Loading... please wait.  </h2>
+  
+  <div id="app_section" style="display:none">
+    
+    <form onsubmit="return load_spotify_playlist(event, 'spotify_playlist_url')">
+      <label for="spotify_playlist_url">Spotify Playlist:</label> <input type="text" id="spotify_playlist_url" size="64" placeholder="https//.." />
+      <button type="submit">Go</button>
+    </form>
+
+    <hr/>
+
+    <div id="spotify_playlist_details" style="display: none;">
+      <h3 id="spotify_playlist_title"></h3>
+      <h4> by <span id="spotify_playlist_owner"></span> | <span id="spotify_playlist_followers"></span> followers</h4>
+      
+      <image id="spotify_playlist_cover" width=400 src=""></image>
+
+      <h4>Tracks</h4>
+      <table id="spotify_playlist_tracks">
+        
+      </table>
+
+    </div>
+    
+  </div>
+
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/spotifyclient.js"></script>
   <script src="js/main.js"></script>
+
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
+  <!-- script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
   </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script -->
+
 </body>
 
 </html>
